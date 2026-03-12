@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgray;
+    color: darkblue;
+    font-family: sans-serif;
+}
+
+header{
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.layout-dual{
+    display: grid;
+    grid-template-columns: 2fr 1fr;   /*repeat(auto-fit, minmax(300px, 1fr));/* ajuste de columnas automático*/
+    gap: 30px;
+    padding: 20px;
+    align-items: start; /* Ó star pata que empiecen de arriba*/
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+} 
+td{
+    padding: 12px;
+    border: 1px solid #ddd;
+}  
+th{  
+    background-color: darkblue;
+    color: white;
+    border-bottom: 3px solid darkblue; /*Un toke profesional*/ 
+    padding: 12px;
+}
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #eeeeee;    
+}
+select{
+    display: flex;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 10px;
+    font-size: 1rem;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;  
+    margin-bottom: 15px;  
+    box-sizing: border-box;
+ }
+ .boton-enviar {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-weight: bold;
+ }
+ .boton-enviar:hover{
+    background-color: #003d7a;
+    cursor: pointer;
+ }
+ a:hover{
+    color: darkred;
+ }
+ label{
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 10px;
+ }
+  input:focus, textarea:focus {
+    outline: none; /*quitamos el borde por defecto*/
+    border: 2px solid darkblue;
+    background-color: #f0f8ff;
+ }
+footer{
+    text-align: right;
+}
+tr{
+    background-color: #f9f9f9;
+}
+tr:nth-child(even){ /*Ésto es para dar un efecto cebra a la tabla. Pinta de un color solo a las par y deja a las impares de otro color*/
+    background-color: #f2f2f2;
+}
+tr:hover{
+    background-color: #d1e7ff;
+    cursor: pointer;
+}
