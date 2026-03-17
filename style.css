@@ -23,7 +23,12 @@ header{
 }
 table{
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-style: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(0, 0, 0), 0,1;
+    overflow: hidden;
+    border: 1px solid #ddd;
     margin: 20px 0;
 } 
 td{
@@ -58,6 +63,7 @@ input, textarea {
     box-sizing: border-box;
  }
  .boton-enviar {
+    margin-top: 10px;
     background-color: #0056b3;
     color: white;
     border: none;
@@ -94,4 +100,42 @@ tr:nth-child(even){ /*Ésto es para dar un efecto cebra a la tabla. Pinta de un 
 tr:hover{
     background-color: #d1e7ff;
     cursor: pointer;
+}
+table, form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0,1); /* Sombra suave y natural */
+    overflow: hidden; /* Para que los colores de las filas no se salgan de las esquinas redondeadas */
+}
+tr, .boton-enviar{
+    transition: background-color 0.3s ease;
+}
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+/* Para que la última columna no tenga borde a la derecha */
+th:last-child, td:last-child {
+    border-right: none;
+}
+
+/* Para que la última fila no tenga borde abajo */
+tr:last-child td, tr:last-child th {
+    border-bottom: none;
+}
+@media (max-width: 768px){
+    .layout-dual{
+        grid-template-columns: 1fr; /* De 2 columnas pasamos a 1 */
+        gap: 20px; /* Reducimos un poco el espacio */
+    }
+    table{
+        grid-column: 1 / 2; /* Ajustamos para que no busque una 3ª línea */
+        font-size: 14px; /* Achicamos la letra para que quepa en el móvil */
+    }
+    form{
+        max-width: 100%; /* Que el formulario use todo el ancho del móvil */
+        margin-top: 15px;
+    }
 }
